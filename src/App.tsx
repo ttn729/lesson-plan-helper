@@ -1,4 +1,4 @@
-import { Button, Grid2, TextField } from '@mui/material';
+import { Button, Grid2, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 const App: React.FC = () => {
@@ -42,14 +42,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
+
+    <Typography variant='h3' textAlign='center' mb='20px'>Lesson Plan Helper</Typography>
+
+    <Grid2 container spacing={3}>
+      
+
+    <Grid2 size={6}>
       <TextField 
         multiline 
-        rows={4} 
+        rows={30} 
         value={multilineString}
         onChange={(e) => setMultilineString(e.target.value)} 
         style={{ marginBottom: '20px' }}
         fullWidth
+
       />
       <Grid2
         container
@@ -93,8 +101,18 @@ const App: React.FC = () => {
           !word!
         </Button>
       </Grid2>
+
+      </Grid2>
+
+
+      <Grid2 size={6}>
       {createButtons(multilineString)}
-    </div>
+
+      </Grid2>
+
+      </Grid2>
+
+    </>
   );
 };
 
